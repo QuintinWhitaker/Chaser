@@ -54,7 +54,7 @@ namespace Chaser
 
         // Sound
         SoundPlayer sp = new  SoundPlayer(Properties.Resources.Blow);
-        SoundPlayer sp2 = new SoundPlayer (Properties.Resources.Lion);
+        SoundPlayer sp2 = new SoundPlayer (Properties.Resources.Lion);   
 
 
         public Form1()
