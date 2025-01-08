@@ -54,7 +54,7 @@ namespace Chaser
 
         // Sound
         SoundPlayer sp = new  SoundPlayer(Properties.Resources.Blow);
-        SoundPlayer sp2 = new SoundPlayer (Properties.Resources.Lion);   
+        SoundPlayer sp2 = new SoundPlayer (Properties.Resources.Lion);    
 
 
         public Form1()
@@ -193,13 +193,16 @@ namespace Chaser
             // change if ball hits either player. If it does place in new random spot
             if (player1.IntersectsWith(ball))
             {
-                 player1Score++;
+                //plays sounds
+                sp2.Play();
+                player1Score++;
                 ball.X = randgen.Next(30, 300);
                 ball.Y = randgen.Next(30, 300);
             }
 
             if (player2.IntersectsWith(ball))
             {
+                sp.Play();
                 player2Score++;
                 ball.X = randgen.Next(30, 300);
                 ball.Y = randgen.Next(30, 300);
@@ -208,12 +211,14 @@ namespace Chaser
             // check if player hits boost and replace it in a random spot
             if (player1.IntersectsWith(ball2))
             {
+                sp.Play();
                 player1Speed += 2;
                 ball2.X = randgen.Next(30, 300);
                 ball2.Y = randgen.Next(30, 300);
             }
             if (player2.IntersectsWith(ball2))
             {
+                sp2.Play();
                 player2Speed += 2;
                 ball2.X = randgen.Next(30, 300);
                 ball2.Y = randgen.Next(30, 300);
